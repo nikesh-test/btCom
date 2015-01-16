@@ -1,0 +1,52 @@
+{	
+	"months" :  [
+			{
+				"name" : "January",
+				"events_length" : 0				
+			},
+			{
+				"name" : "February",
+				"events_length" : 0
+			},
+			{
+				"name" : "March",
+				"events_length" : 0
+			},
+			{
+				"name" : "April",
+				"events_length" : 50
+			},
+			{
+				"name" : "May",
+				"events_length" : 50
+			},
+			{
+				"name" : "June",
+				"events_length" : 50
+			},
+			{
+				"name" : "July",
+				"events_length" : 50
+			},
+			{
+				"name" : "August",
+				"events_length" : 50
+			},
+			{
+				"name" : "September",
+				"events_length" : 50
+			},
+			{
+				"name" : "October",
+				"events_length" : 50
+			},
+			{
+				"name" : "November",
+				"events_length" : 50
+			},
+			{
+				"name" : "December",
+				"events_length" : 40
+			}
+	]		
+}

@@ -1,0 +1,20 @@
+<ol class="hrz-list">
+	<li>
+		<input type="text" ng-model="searchTime.dateFrom" data-set-current-date="searchTime.dateFrom" class="input-small input-calendar datepicker ng-date-from" placeholder="from">
+		<span class="hide" datepicker-from-to="searchTime.dateFrom"></span>
+	</li>
+	<li class="larger-r-space">
+		<input type="text" ng-model="searchTime.timeFrom" data-set-current-time="from" bt-timepicker="searchTime.timeFrom" class="input-mini input-hour timepicker" placeholder="12:00">
+	</li>
+	<li>
+		<input type="text" ng-model="searchTime.dateTo" data-set-current-date="searchTime.dateTo" class="input-small input-calendar datepicker ng-date-to" placeholder="to">
+		<span class="hide" datepicker-from-to="searchTime.dateTo"></span>
+	</li>
+	<li class="larger-r-space">
+		<input type="text" ng-model="searchTime.timeTo" data-set-current-time="to" bt-timepicker="searchTime.timeTo" class="input-mini input-hour timepicker" placeholder="12:00">
+	</li>
+		<button type="submit" class="btn">
+			<img src="/css/i/icons/search-icon.png" height="16" width="16" alt="Search">
+		</button>		
+	</li>
+</ol>

@@ -1,0 +1,80 @@
+{
+  "success" : true,
+  "responseCode" : 333,
+  "message": {
+
+  },
+  "data": {	
+  			"results_length" : 5,
+			"results" : [
+			  			{
+			  				"type" : "people",
+		  					"id" : 1,
+		  					"is_friend" : true,
+		  					"company" : "Milan"
+		  				},
+		  				{
+		  					"type" : "people",
+		  					"id" : 2,
+		  					"is_friend" : false,
+		  					"company" : "9nine"
+		  				},
+				        {
+				        	"type" : "event",
+				        	"id": 1513,
+				        	"user_id" : 2,
+			        		"title": "Going to movie with friends", 
+				        	"date": {
+				        		"date": "03/02/2013",
+				        		"time_range" : {
+			                    	"from" : "12:00AM",
+			                    	"to" : "4:00PM"
+			                 	}
+		                 	},				        	
+				        	"location" : "New York City",				        	 
+				        	"users": [
+					        	{
+					        		"id": 1
+					        	},
+					        	{
+					        		"id": 2
+					        	},
+					        	{
+					        		"id": 3
+					        	},
+					        	{
+					        		"id": 4
+					        	},
+					        	{
+					        		"id": 5
+					        	}
+				        	]
+				        },
+				         {
+				         	"type" : "event",
+				        	"id": 1514,
+				        	"user_id" : 2,
+			        		"title": "Playing poker", 
+				        	"date": {
+				        		"date": "03/02/2013",
+				        		"time_range" : {
+			                    	"from" : "12:00AM",
+			                    	"to" : "4:00PM"
+			                 	}
+		                 	},				        	
+				        	"location" : "Silicon Valley",				        	 
+				        	"users": [
+					        	{
+					        		"id": 1
+					        	},
+					        	{
+					        		"id": 2
+					        	},
+					        	{
+					        		"id": 3
+					        	}
+				        	]
+				        }
+			]
+		}
+}

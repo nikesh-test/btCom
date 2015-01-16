@@ -1,0 +1,209 @@
+{
+  "success" : true,
+  "responseCode" : 333,
+  "message": {
+
+  },
+  "data": {	
+			"events" : [
+				        {
+				        	"id": 1513,
+				        	"user_id" : 2,
+			        		"title": "Going to movie with friends",
+				        	"date": {
+				        		"date": "03/02/2013",
+				        		"time_range" : {
+			                    	"from" : "12:00AM",
+			                    	"to" : "4:00PM"
+			                 	}
+		                 	},				        	
+				        	"location" : "New York City",				        	 
+				        	"users": [
+					        	{
+					        		"id": 2
+					        	},
+					        	{
+					        		"id": 2
+					        	},
+					        	{
+					        		"id": 2
+					        	},
+					        	{
+					        		"id": 2
+					        	},
+					        	{
+					        		"id": 2
+					        	}
+				        	],
+				        	"request" : {
+			        			"sent" : true,
+			        			"status" : "accepted"
+			        		}
+				        },
+				         {
+				        	"id": 1514,
+				        	"user_id" : 2,
+			        		"title": "Playing poker", 
+				        	"date": {
+				        		"date": "03/02/2013",
+				        		"time_range" : {
+			                    	"from" : "12:00AM",
+			                    	"to" : "4:00PM"
+			                 	}
+		                 	},				        	
+				        	"location" : "Silicon Valley",				        	 
+				        	"users": [
+					        	{
+					        		"id": 2
+					        	},
+					        	{
+					        		"id": 2
+					        	},
+					        	{
+					        		"id": 2
+					        	}
+				        	],
+				        	"request" : {
+			        			"sent" : false,
+			        			"status" : 0
+			        		}
+				        },
+				        {
+				        	"id": 1516,
+				        	"user_id" : 2,
+			        		"title": "Playing soccer - old school", 
+				        	"date": {
+				        		"date": "03/02/2013",
+				        		"time_range" : {
+			                    	"from" : "12:00AM",
+			                    	"to" : "4:00PM"
+			                 	}
+		                 	},				        	
+				        	"location" : "Los Angeles",				        	 
+				        	"users": [
+					        	{
+					        		"id": 2
+					        	},
+					        	{
+					        		"id": 2
+					        	},
+					        	{
+					        		"id": 2
+					        	},
+					        	{
+					        		"id": 2
+					        	},
+					        	{
+					        		"id": 2
+					        	}
+				        	],
+				        	"request" : {
+			        			"sent" : true,
+			        			"status" : "declined"
+			        		}
+				        },
+				        {
+				        	"id": 1513,
+				        	"user_id" : 2,
+			        		"title": "Going to movie with friends",
+				        	"date": {
+				        		"date": "03/02/2013",
+				        		"time_range" : {
+			                    	"from" : "12:00AM",
+			                    	"to" : "4:00PM"
+			                 	}
+		                 	},				        	
+				        	"location" : "New York City",				        	 
+				        	"users": [
+					        	{
+					        		"id": 2
+					        	},
+					        	{
+					        		"id": 2
+					        	},
+					        	{
+					        		"id": 2
+					        	},
+					        	{
+					        		"id": 2
+					        	},
+					        	{
+					        		"id": 2
+					        	}
+				        	],
+				        	"request" : {
+			        			"sent" : true,
+			        			"status" : "accepted"
+			        		}
+				        },
+				        {
+				        	"id": 1513,
+				        	"user_id" : 2,
+			        		"title": "Going to movie with friends",
+				        	"date": {
+				        		"date": "03/02/2013",
+				        		"time_range" : {
+			                    	"from" : "12:00AM",
+			                    	"to" : "4:00PM"
+			                 	}
+		                 	},				        	
+				        	"location" : "New York City",				        	 
+				        	"users": [
+					        	{
+					        		"id": 2
+					        	},
+					        	{
+					        		"id": 2
+					        	},
+					        	{
+					        		"id": 2
+					        	},
+					        	{
+					        		"id": 2
+					        	},
+					        	{
+					        		"id": 2
+					        	}
+				        	],
+				        	"request" : {
+			        			"sent" : true,
+			        			"status" : "accepted"
+			        		}
+				        },
+				        {
+				        	"id": 1513,
+				        	"user_id" : 2,
+			        		"title": "Going to movie with friends",
+				        	"date": {
+				        		"date": "03/02/2013",
+				        		"time_range" : {
+			                    	"from" : "12:00AM",
+			                    	"to" : "4:00PM"
+			                 	}
+		                 	},				        	
+				        	"location" : "New York City",				        	 
+				        	"users": [
+					        	{
+					        		"id": 2
+					        	},
+					        	{
+					        		"id": 2
+					        	},
+					        	{
+					        		"id": 2
+					        	},
+					        	{
+					        		"id": 2
+					        	},
+					        	{
+					        		"id": 2
+					        	}
+				        	],
+				        	"request" : {
+			        			"sent" : true,
+			        			"status" : "accepted"
+			        		}
+				        }
+			]
+		}
+}

@@ -1,0 +1,42 @@
+	<div class="modal-header invite-friends-modal-hdr">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		<h3>Budstime Privacy</h3>
+	</div>
+	<div class="modal-body modal-body-follow text-modal-body" bt-scroll-it="" bt-modal="#privacy">
+		<h4>What does Budstime do to protect my information?</h4>
+		<p>We're committed to protecting your information. We have industry standard and proprietary network monitoring tools constantly running in our system in order to prevent security breaches and protect the security of your data.</p>
+		<p>We also post to a secure page when you're logging in and employ industry standard encryption. This may not always be apparent from the URL (web address), but rest assured our logins are secure.</p>
+		<h4>What data is stored by Budstime?</h4>
+		<p>We encourage you to have a look at the Privacy Policy (also called “Data Use Policy”), which describes:</p>
+		<ul class="bullet-list">
+			<li>The categories of data being processed by Budstime,</li>
+			<li>The personal data that Budstime receives from Budstime members,</li>
+			<li>The purpose or purposes of the processing of such data,</li>
+			<li>The source or sources(s) of the data, if known, and</li>
+			<li>The recipients or categories of recipients to whom Budstime members’ personal data are or may be disclosed</li>
+		</ul>
+		<h4>What does Budstime do to protect my information?</h4>
+		<p>We're committed to protecting your information. We have industry standard and proprietary network monitoring tools constantly running in our system in order to prevent security breaches and protect the security of your data.</p>
+		<p>We also post to a secure page when you're logging in and employ industry standard encryption. This may not always be apparent from the URL (web address), but rest assured our logins are secure.</p>
+		<h4>What data is stored by Budstime?</h4>
+		<p>We encourage you to have a look at the Privacy Policy (also called “Data Use Policy”), which describes:</p>
+		<ul class="bullet-list">
+			<li>The categories of data being processed by Budstime,</li>
+			<li>The personal data that Budstime receives from Budstime members,</li>
+			<li>The purpose or purposes of the processing of such data,</li>
+			<li>The source or sources(s) of the data, if known, and</li>
+			<li>The recipients or categories of recipients to whom Budstime members’ personal data are or may be disclosed</li>
+		</ul>
+		<h4>What does Budstime do to protect my information?</h4>
+		<p>We're committed to protecting your information. We have industry standard and proprietary network monitoring tools constantly running in our system in order to prevent security breaches and protect the security of your data.</p>
+		<p>We also post to a secure page when you're logging in and employ industry standard encryption. This may not always be apparent from the URL (web address), but rest assured our logins are secure.</p>
+		<h4>What data is stored by Budstime?</h4>
+		<p>We encourage you to have a look at the Privacy Policy (also called “Data Use Policy”), which describes:</p>
+		<ul class="bullet-list">
+			<li>The categories of data being processed by Budstime,</li>
+			<li>The personal data that Budstime receives from Budstime members,</li>
+			<li>The purpose or purposes of the processing of such data,</li>
+			<li>The source or sources(s) of the data, if known, and</li>
+			<li>The recipients or categories of recipients to whom Budstime members’ personal data are or may be disclosed</li>
+		</ul>
+	</div>

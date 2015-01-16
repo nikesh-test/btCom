@@ -1,0 +1,10 @@
+<div class="carrossel-scope uploaded-imgs-list" bt-carousel-it="event.images">
+	<ul class="group list-carrossel">
+		<li ng-repeat="(key, image) in event.images">
+			<span class="crop-img">
+				<img ng-src="{{image.thumbnail_url||image.src}}" alt="{{image.name}}" bt-show-image="event" bt-index="{{$index}}" />
+			</span>
+			<button type="button" class="close v_hdn" title="Remove image" ng-click="removeImageOnPreview(key, event.id, image.id)">×</button>
+		</li>
+	</ul>
+</div>

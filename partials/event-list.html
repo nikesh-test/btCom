@@ -1,0 +1,46 @@
+	<div class="modal-header invite-friends-modal-hdr">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		<h3>Your buds at {{current_month}} {{current_day}}, {{current_year}} {{event_list_time_range.from}} to {{event_list_time_range.to}}</h3>
+	</div>
+	<div class="modal-body modal-body-follow event-list-modal-bd">
+		<div class="event-list-wrapper group" bt-scroll-it bt-modal="#event-list">
+			
+			<div class="buds-event-box group" ng-repeat="event in event_list" ng-class="{ last : $last }">
+	        	<div class="group" bt-event-info="event.id">
+	                <div class="profile-pic">
+	                        <a href="javascript: void(0);" class="img-inner square-profile" data-tooltip-it="following" data-original-title="{{getUserInfo(event.user_id, 'name')}}">
+	                                <img ng-src="{{getUserInfo(event.user_id, 'image_src')}}" height="60" width="60" alt="{{getUserInfo(event.user_id, 'name')}}" class="rd">
+	                        </a>
+	                </div>
+	                <div class="event-main-info">
+	                        <p class="event-title truncate">{{event.title}}</p>
+	                        <div class="buds-attending" ng-hide="!event.users.length">
+	                                
+	                                <a href="javascript: void(0);" ng-repeat="(key, u) in event.users | limitTo:4" class="profile-link img-inner" title="{{getUserInfo(u.id, 'name')}}" ng-click="openProfilePage(u.id)" data-tooltip-it="u">
+	                                        <img ng-src="{{getUserInfo(u.id, 'image_src')}}" height="26" width="26" alt="{{getUserInfo(u.id, 'name')}} profile picture" class="img-circle">
+	                                </a>
+	                                
+	                                <a href="javascript: void(0);" ng-click="listUsers(event)" class="small-circle plus-circle pull-right" ng-show="event.users.length > 4">{{event.users.length-4}}+</a>
+	                                
+	                        </div>
+	                </div>
+	                <div class="event-aux-info">
+	                        <ul>
+                                <li class="highlight"><span class="calendar-icon-min icon-min"></span> {{event.date.date}}</li>
+                                <li><span class="clock-icon-min icon-min"></span> {{event.date.time_range.from}} - {{event.date.time_range.to}}</li>
+                                <li><span class="place-icon-min icon-min"></span> {{event.location}}</li>
+	                        </ul>
+	                </div>
+	            </div>  
+	            <div class="event-status" ng-switch on="event.request.sent">
+					<span ng-switch-when="true" ng-switch on="event.request.status">
+						<span ng-switch-when="accepted" data-tooltip-it title="Accepted the event" class="thumbs-up-icon"></span>
+						<span ng-switch-when="declined" data-tooltip-it title="Declined the event" class="thumbs-down-icon"></span>
+					</span>
+					<button class="btn btn-small btn-blue join-btn" ng-switch-when="false" ng-hide="!event.showJoin" ng-click="joinAction(event)">join</button>
+				</div>                      	                                        
+	        </div>
+
+    	</div>
+	</div>
+	<div class="modal-footer-follow"></div>

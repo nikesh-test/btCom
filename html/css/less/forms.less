@@ -1,0 +1,201 @@
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+	display: inline-block;
+	height: @baseLineHeight;
+	padding: 7px 10px;
+	// margin-bottom: @baseLineHeight / 2;
+	line-height: @baseLineHeight;
+	color: @gray;
+	.border-radius(@baseBorderRadius);
+	vertical-align: middle;
+	background-color: #fcfcfc;
+	.box-shadow(~"0 1px rgba(255,255,255,.9), inset 0 2px 3px rgba(0,0,0,.08)");
+	border: solid 1px #c5c5c5;
+
+	.transition(border linear .2s);
+
+	// Focus state
+		&:focus {
+		border-color: @brandBlue;
+		outline: 0;
+		outline: thin dotted \9; /* IE6-9 */
+		.box-shadow(~"inset 0 1px 1px rgba(0,0,0,.020), 0 0 8px rgba(82,168,236,.4)");
+	}
+}
+
+select{
+	height: auto;
+	line-height: auto;
+}
+
+input.search-query{
+	width: 260px;
+	font-size: 11px;
+	padding: 4px 10px 3px;
+	background: #d1d1d1 url(i/icons/search-icon.png) no-repeat 255px center;
+	.box-shadow(~"0 1px rgba(255,255,255,.4), inset 0 2px 3px rgba(0,0,0,.15)");
+	&:focus{
+		background-color: #e0e0e0;
+	}
+}
+.form-heading{
+	font-size: 14px;
+	margin-bottom: 5px
+}
+
+// Placeholder
+// -------------------------
+
+// Placeholder text gets special styles because when browsers invalidate entire lines if it doesn't understand a selector
+input,
+textarea {
+  .placeholder();
+}
+
+// General classes for quick sizes
+.input-mini       { width: 60px; }
+.input-small      { width: 90px; }
+.input-medium     { width: 150px; }
+.input-large      { width: 210px; }
+.input-xlarge     { width: 270px; }
+.input-xxlarge    { width: 390px; }
+.input-xxxlarge    { width: 530px; }
+
+// Budstime custom
+
+.budssearch{
+	.btn{
+		width: 40px;
+		padding: 8px 12px 4px 12px;
+		img{
+			display: inline-block;
+			width: 16px;
+		}
+	}
+}
+
+
+.add-event-form{
+	label{
+		display: block;
+		margin-bottom: 5px;
+		font-size: 13px;
+	}
+	ol{
+		margin-bottom: 15px;
+		&.last{
+			margin-bottom: 0
+		}
+	}
+	li{
+		margin-bottom: 10px;
+	}
+
+	.input-large{
+		width: 230px;
+	}
+	.input-calendar, .input-hour{
+		float: left;
+		margin: 0 10px 0 0;
+	}
+
+	textarea{
+		min-height: 30px; 
+		text-align: left;
+	}
+	.wrap-to-time{
+		padding-top: 18px;
+	}
+
+	.to-label{
+		height: 35px;
+		line-height: 35px;
+		margin-right: 8px;
+	} 
+	.input-calendar{
+		width: 86px;
+		background-position: 82px 10px;
+	}
+	.input-hour{
+		width: 48px;
+		background-position: 45px -22px;
+		&.last{
+			margin-right: 0;
+		}
+	}
+
+	.wrap-privacy{
+		margin-right: 25px;
+	}
+
+	.event-privacy-slct{
+		padding: 9px 10px;
+		width: 221px;
+	}
+}
+
+// FORM FIELD FEEDBACK STATES
+// --------------------------
+
+// Warning
+.control-group.warning {
+  .formFieldState(@warningText, @warningText, @warningBackground);
+}
+// Error
+.control-group.error {
+  .formFieldState(@errorText, @errorText, @errorBackground);
+}
+// Success
+.control-group.success {
+  .formFieldState(@successText, @successText, @successBackground);
+}
+// Success
+.control-group.info {
+  .formFieldState(@infoText, @infoText, @infoBackground);
+}
+
+// HTML5 invalid states
+// Shares styles with the .control-group.error above
+input:focus:required:invalid,
+textarea:focus:required:invalid,
+select:focus:required:invalid {
+  color: #b94a48;
+  border-color: #ee5f5b;
+  &:focus {
+    border-color: darken(#ee5f5b, 10%);
+    @shadow: 0 0 6px lighten(#ee5f5b, 20%);
+    .box-shadow(@shadow);
+  }
+}
+
+
+// Utility classes
+.muted {
+  color: @grayLight;
+}
+.text-warning { color: @warningText; }
+a.text-warning:hover { color: darken(@warningText, 10%); }
+
+.text-error { color: @errorText; }
+a.text-error:hover { color: darken(@errorText, 10%); }
+
+.text-info { color: @infoText; }
+a.text-info:hover { color: darken(@infoText, 10%); }
+
+.text-success { color: @successText; }
+a.text-success:hover { color: darken(@successText, 10%); }

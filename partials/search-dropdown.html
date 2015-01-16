@@ -1,0 +1,32 @@
+<div class="follow-list scroll-wrapper group">
+	<ul>
+		
+		<li ng-repeat="item in results|limitTo:4" ng-switch on="item.type" ng-class="{ first: $first, last: $last }">
+			
+			<a href="#" class="group" ng-switch-when="people" bt-open-profile="item.id">
+				<span class="img-inner event-owner" title="{{item.name}}">
+					<img ng-src="{{item.image_src}}" height="37" width="37" alt="{{item.name}} picture" class="img-circle">
+				</span>
+				<span class="entry">
+					<span class="title">{{item.name}}</span>
+					<span class="label">
+						{{item.type}}
+					</span>
+				</span>
+			</a>
+			
+			<a href="#" class="group event-item" ng-switch-when="event" bt-event-info="item.id">
+				<time class="date-box group">
+					<abbr class="month">{{item.date.date|dateToMonthAbbr}}</abbr>
+					<strong class="day">{{item.date.date|dateToDay}}</strong>
+				</time>
+				<span class="event-hour upper-small">{{item.date.time_range.from}} - {{item.date.time_range.to}}</span>
+				<strong class="small-header">
+					{{item.title}}
+				</strong>				
+			</a>
+
+		</li>
+	</ul>
+</div>
+<a href="#" class="see-all-btn btn-gray" ng-click="searchResult(searchQuery)">see all {{results_length}} search results</a>

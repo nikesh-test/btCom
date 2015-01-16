@@ -1,0 +1,28 @@
+	<div class="modal-header invite-friends-modal-hdr">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		<h3>Facebook Import</h3>
+	</div>
+	<div class="modal-body text-modal-body">
+		<form action="#" class="add-event-form">
+			<fieldset>
+				<ol>
+					<li class="input-check-wrapper">
+						<input type="checkbox" name="facebook[friends]" id="check-import-friends" ng-model="importfb.friends">
+						<label for="check-import-friends">Import friends</label>
+					</li>
+					<li class="input-check-wrapper">
+						<input type="checkbox" name="facebook[events]" id="check-import-events" ng-model="importfb.events">
+						<label for="check-import-events">Import events</label>
+					</li>
+				</ol>
+			</fieldset>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button class="btn pull-left btn-cancel">
+			Skip
+		</button>
+		<button class="btn btn-warning btn-confirm">
+			Import from Facebook
+		</button>
+	</div>

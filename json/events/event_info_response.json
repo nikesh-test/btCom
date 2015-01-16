@@ -1,0 +1,67 @@
+{
+  "success" : true,
+  "responseCode" : 333,
+  "message": {
+
+  },
+  "data":  {
+      "id" : 1356,
+      "date": {
+        "date_range": {
+          "from" : "03/02/2013",
+          "to" : "03/03/2013"
+        },
+        "time_range" : {
+          "from" : "12:00AM",
+          "to" : "4:00PM"
+        }
+      },
+      "author" : false,
+      "show_join" : false,
+      "title" : "Going out with friends",
+      "location" : "New York City",
+      "users" : [ { "id" : 4 }, { "id": 5 } ],
+      "privacy" : "Public",
+      "detail" : "Sed eu ullamcorper dui. Duis nibh quam, imperdiet vitae laoreet nec, dapibus id velit. Mauris in velit et lorem convallis. laoreet nec, dapibus id velit. Mauris in velit et lorem convallis.",
+      "images" : [ 
+        { "id": 5136, "src": "/img/event-img-thumb.jpg" }, 
+        { "id": 5137, "src": "/img/event-img-thumb.jpg" }, 
+        { "id": 5138, "src": "/img/event-img-thumb.jpg" }, 
+        { "id": 5139, "src": "/img/event-img-thumb.jpg" }, 
+        { "id": 5140, "src": "/img/event-img-thumb.jpg" }, 
+        { "id": 5141, "src": "/img/event-img-thumb.jpg" }, 
+        { "id": 5142, "src": "/img/event-img-thumb.jpg" }
+      ],
+      "videos" : [
+        "http://www.youtube.com/watch?v=60MQ3AG1c8o",
+        "http://www.youtube.com/watch?v=Rjq2_Mg3pSA",
+        "http://www.youtube.com/watch?v=F4yhA3DUkn0"
+      ],
+      "comments" : {
+        "comments_length": 6,
+        "comments_left" : 3,
+        "last_comments" : [
+          {
+            "user_id" : 1,
+            "id" : 1,
+            "entry" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem assumenda."
+          },
+          {
+            "user_id" : 2,
+            "id" : 2,
+            "entry" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem assumenda."
+          },
+          {
+            "user_id" : 3,
+            "id" : 3,
+            "entry" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem assumenda."
+          },
+          {
+            "user_id" : 4,
+            "id" : 4,
+            "entry" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem assumenda."
+          }       
+        ]
+      }
+    }
+}

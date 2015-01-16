@@ -1,0 +1,32 @@
+<div class="follow-list scroll-wrapper group">
+	<ul>
+		
+		<li ng-repeat="item in results|limitTo:4" ng-switch on="item.type" ng-class="{ first: $first, last: $last }">
+			
+			<a href="#" class="group" ng-switch-when="people">
+				<span class="img-inner event-owner" title="{{getUserInfo(item.id, 'name')}}">
+					<img ng-src="{{getUserInfo(item.id, 'image_src')}}" height="37" width="37" alt="{{getUserInfo(item.id, 'name')}} picture" class="img-circle">
+				</span>
+				<span class="entry">
+					<span class="title">{{getUserInfo(item.id, 'name')}}</span>
+					<span class="label">
+						{{item.type}}
+						<span class="text-success" ng-hide="item.is_friend">add as friend</span>
+						<span class="text-error" ng-hide="!item.is_friend">remove friend</span>
+					</span>
+				</span>
+			</a>
+			
+			<a href="#" class="group" ng-switch-when="event">
+				<span class="img-inner event-owner" title="{{getUserInfo(item.user_id, 'name')}}">
+					<img ng-src="{{getUserInfo(item.user_id, 'image_src')}}" height="37" width="37" alt="{{getUserInfo(item.user_id, 'name')}} picture" class="img-circle">
+				</span>
+				<span class="entry">
+					<span class="title">{{item.title}}</span>
+					<span class="label">{{item.type}}</span>
+				</span>
+			</a>
+		</li>
+	</ul>
+</div>
+<a href="#" class="see-all-btn btn-gray" ng-click="searchResult(searchQuery)">see all {{results_length}} search results</a>

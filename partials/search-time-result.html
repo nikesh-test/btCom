@@ -1,0 +1,92 @@
+			<form action="javascript:;" ng-submit="searchTimeResult()" id="budssearch" class="budssearch large-btm-separator">
+				<fieldset>
+					<legend class="hide">Search your buds</legend>
+					<p class="form-heading">Search your buds</p>
+					<ol class="hrz-list ng-date-wrapper">
+						<li>
+							<input type="text" ng-model="searchTime.dateFrom" data-set-current-date="searchTime.dateFrom" class="input-small input-calendar datepicker ng-date-from" placeholder="from">
+						</li>
+						<li class="larger-r-space">
+							<input type="text" ng-model="searchTime.timeFrom" data-set-current-time="from" bt-timepicker="searchTime.timeFrom" class="input-mini input-hour timepicker ng-time-from" placeholder="12:00">	
+						</li>
+						<li>
+							<input type="text" ng-model="searchTime.dateTo" data-set-current-date="searchTime.dateTo" class="input-small input-calendar datepicker ng-date-to" placeholder="to">
+						</li>
+						<li class="larger-r-space">
+							<input type="text" ng-model="searchTime.timeTo" data-set-current-time="to" bt-timepicker="searchTime.timeTo" class="input-mini input-hour timepicker ng-time-to" placeholder="12:00">	
+						</li>
+						<li>
+							<button type="submit" class="btn">
+								<img src="/css/i/icons/search-icon.png" height="16" width="16" alt="Search">
+							</button>		
+						</li>
+					</ol>
+				</fieldset>
+			</form> 
+			<div class="your-buds-currently">
+				<header class="your-buds-hd ts-main-hd group">
+					<button type="button" class="close pull-left" ng-click="removeTimeSearchQuery()" title="Clear this query" data-tooltip-it="">×</button>
+					<p class="form-heading search-title">
+						<span class="darken">{{searchTime.dateFrom}} {{searchTime.timeFrom}}</span> to <span class="darken">{{searchTime.dateTo}} {{searchTime.timeTo}}</span>
+					</p>
+				</header>
+				<div class="your-buds-content ts-left-column pull-left">
+					<p class="ts-header">Your buds betwen {{searchTime.dateFrom}} {{searchTime.timeFrom}} to {{searchTime.dateTo}} {{searchTime.timeTo}}</p>
+					<div class="buds-event-box group" ng-repeat="event in events_search">
+						<div class="group" bt-event-info="event.id">
+							<div class="profile-pic">
+								<a href="javascript: void(0);" class="img-inner square-profile" data-tooltip-it="event" data-original-title="{{getUserInfo(event.user_id, 'name')}}">
+									<img ng-src="{{getUserInfo(event.user_id, 'image_src')}}" height="60" width="60" alt="{{getUserInfo(event.user_id, 'name')}}" class="rd">
+								</a>
+							</div>
+							<div class="event-main-info">
+								<p class="event-title truncate">{{event.title}}</p>
+								<div class="buds-attending" ng-hide="!event.users.length">
+									
+									<a href="javascript: void(0);" ng-repeat="(key, u) in event.users | limitTo:4" class="profile-link img-inner" title="{{getUserInfo(u.id, 'name')}}" ng-click="openProfilePage(u.id)" data-tooltip-it="u">
+										<img ng-src="{{getUserInfo(u.id, 'image_src')}}" height="26" width="26" alt="{{getUserInfo(u.id, 'name')}} profile picture" class="img-circle">
+									</a>
+									
+									<a href="javascript: void(0);" class="small-circle plus-circle pull-right" ng-show="event.users.length > 4">{{event.users.length-4}}+</a>
+									
+								</div>
+							</div>
+							<div class="event-aux-info">
+								<ul>
+									<li class="highlight"><span class="calendar-icon-min icon-min"></span> {{event.date.date}}</li>
+									<li><span class="clock-icon-min icon-min"></span> {{event.date.time_range.from}} - {{event.date.time_range.to}}</li>
+									<li><span class="place-icon-min icon-min"></span> {{event.location}}</li>
+								</ul>
+							</div>
+						</div>	
+						<div class="event-status" ng-switch on="event.request.sent">
+							<span ng-switch-when="true" ng-switch on="event.request.status">
+								<span ng-switch-when="accepted" data-tooltip-it title="Accepted the event" class="thumbs-up-icon"></span>
+								<span ng-switch-when="declined" data-tooltip-it title="Declined the event" class="thumbs-down-icon"></span>
+							</span>
+							<button class="btn btn-small btn-blue join-btn" ng-switch-when="false" ng-click="joinAction(event)">join</button>
+						</div>				
+					</div>
+					<footer class="your-buds-ft hide">
+						<a href="javascript: void(0);" class="load-more" 
+                        	ng-click="load_more_events()"
+                        	ng-hide="!bud_events.length || currentPage == events_pagination || !events_pagination">load more</a>
+					</footer>
+				</div>
+				
+				<div class="your-buds-content ts-right-column pull-right">
+					<p class="ts-header">Your buds with no plans at this time</p>
+					<div class="buds-event-box group" ng-repeat="user in users_search">
+						<div class="profile-pic">
+							<a href="javascript: void(0);" class="img-inner square-profile" data-tooltip-it="user" data-original-title="{{getUserInfo(user.id, 'name')}}">
+								<img ng-src="{{getUserInfo(user.id, 'image_src')}}" height="60" width="60" alt="{{getUserInfo(user.id, 'name')}}" class="rd">
+							</a>
+						</div>					
+					</div>
+					<footer class="ts-friends-ft">
+						<button class="btn upper-small" ng-click="openAddEvent()">
+							Make some plan
+						</button>
+					</footer>
+				</div>
+			</div>

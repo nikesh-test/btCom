@@ -1,0 +1,86 @@
+<ul class="center-calendar-nav group">
+		<li class="first">
+			<button id="calendar-month-btn" class="btn-month calendar-nav-btn" ng-class="{ current: calendarMonthView }" ng-click="showView('month')">
+				{{current_month}}
+			</button>
+			<div class="calendar-subnav-month calendar-subnav" bt-vhidden="!calendarMonthView">
+				<header>
+					<p>
+						<a href="javascript: void(0);" ng-repeat="month in months" ng-class="{ current: current_month==month.name, hasEvent: month.events_length>=1  }" ng-click="set_current_month(month.name)" title="{{month.name}}">{{short_month(month.name)}}</a>
+					</p>
+				</header>
+				<div class="body group">
+					<table class="table-month-calendar-nav">
+						<thead>
+							<tr>
+								<th>SUN</th>
+								<th>MON</th>
+								<th>TUE</th>
+								<th>WED</th>
+								<th>THUR</th>
+								<th>FRI</th>
+								<th class="last">SAT</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td colspan="7">
+									<a href="javascript:void(0);" 
+										class="nav-item" 
+										ng-repeat="(key, day) in days" 
+										ng-class="{ disabled : day.event_length==-1, corner: (key+1)%7==0, current: day.day==current_day && day.event_length>=0 }" 
+										ng-click="day.event_length==-1 || trigger_day(day.day)">
+										{{day.day}}
+										<span class="small-circle event-counter" ng-hide="day.event_length<=0">{{day.event_length}}</span>
+									</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</li>
+		<li>
+			<button id="calendar-day-btn" class="btn-day calendar-nav-btn" ng-class="{ current: calendarDayView }" ng-click="showView('day')">
+				{{current_day}}
+			</button>
+			<div class="calendar-subnav-day calendar-subnav" bt-vhidden="!calendarDayView">
+				<header>
+					<ul>
+						<li>
+							<a href="#" ng-repeat="day in days" ng-hide="day.event_length==-1" ng-class="{ hasEvent : day.event_length>=1, current: day.day==current_day }" ng-click="set_current_day(day.day);updateEvents()">{{day.day}}</a>
+						</li>
+					</ul>
+				</header>
+			</div>
+		</li>
+		<li>
+			<button id="calendar-year-btn" class="btn-year calendar-nav-btn" ng-class="{ current: calendarYearView }" ng-click="showView('year')">
+				{{current_year}}
+			</button>
+			<div class="calendar-subnav-year calendar-subnav" bt-vhidden="!calendarYearView">
+				<header class="calendar-year-hd" bt-carousel-it="years" bt-carousel-visible="11">
+					<ul class="group">
+						<li ng-repeat="year in years">
+							<a href="javascript: void(0);" ng-class="{ current: current_year==year.name }" ng-click="set_current_year(year.name)">{{year.name}}</a>
+						</li>
+					</ul>	
+				</header>
+				<div class="body group">
+						<table class="table-year-calendar-nav">
+							<tbody>
+								<tr>
+									<td colspan="7">
+										<a href="#" class="nav-item" ng-repeat="(key, month) in months" title="{{month.name}}" ng-class="{ corner: (key+1)%4==0 }" ng-click="set_current_month(month.name);showView('month')">
+										  	{{month.name}}
+										  	<span class="small-circle event-counter" ng-class="{ hide: month.events_length==0 }
+										  	">{{month.events_length}}</span>
+										</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+				</div>
+			</div>
+		</li>
+	</ul>

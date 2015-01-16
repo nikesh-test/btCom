@@ -1,0 +1,111 @@
+{
+  "success" : true,
+  "responseCode" : 333,
+  "message": {
+
+  },
+  "data": {	
+  			"total_events" : 5,
+			"events" : [
+				        {
+				        	"id": 1513,
+				        	"user_id" : 2,
+			        		"title": "Going to movie with friends",
+				        	"date": {
+				        		"date": "03/02/2013",
+				        		"time_range" : {
+			                    	"from" : "12:00AM",
+			                    	"to" : "4:00PM"
+			                 	}
+		                 	},				        	
+				        	"location" : "New York City",				        	 
+				        	"users": [
+					        	{
+					        		"id": 2
+					        	},
+					        	{
+					        		"id": 2
+					        	},
+					        	{
+					        		"id": 2
+					        	},
+					        	{
+					        		"id": 2
+					        	},
+					        	{
+					        		"id": 2
+					        	}
+				        	],
+				        	"showJoin" : false,
+				        	"request" : {
+				        		"sent" : true,
+				        		"status" : "accepted"
+				        	}
+				        },
+				         {
+				        	"id": 1514,
+				        	"user_id" : 2,
+			        		"title": "Playing poker", 
+				        	"date": {
+				        		"date": "03/02/2013",
+				        		"time_range" : {
+			                    	"from" : "12:00AM",
+			                    	"to" : "4:00PM"
+			                 	}
+		                 	},				        	
+				        	"location" : "Silicon Valley",				        	 
+				        	"users": [
+					        	{
+					        		"id": 2
+					        	},
+					        	{
+					        		"id": 2
+					        	},
+					        	{
+					        		"id": 2
+					        	}
+				        	],
+				        	"showJoin" : true,
+				        	"request" : {
+				        		"sent" : false,
+				        		"status" : ""
+				        	}
+				        },
+				        {
+				        	"id": 1516,
+				        	"user_id" : 2,
+			        		"title": "Playing soccer - old school", 
+				        	"date": {
+				        		"date": "03/02/2013",
+				        		"time_range" : {
+			                    	"from" : "12:00AM",
+			                    	"to" : "4:00PM"
+			                 	}
+		                 	},				        	
+				        	"location" : "Los Angeles",				        	 
+				        	"users": [
+					        	{
+					        		"id": 2
+					        	},
+					        	{
+					        		"id": 2
+					        	},
+					        	{
+					        		"id": 2
+					        	},
+					        	{
+					        		"id": 2
+					        	},
+					        	{
+					        		"id": 2
+					        	}
+				        	],
+				        	"showJoin" : false,
+				        	"request" : {
+				        		"sent" : true,
+				        		"status" : "declined"
+				        	}
+				        } 
+			]
+		}
+}

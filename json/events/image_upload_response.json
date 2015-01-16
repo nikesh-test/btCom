@@ -1,0 +1,20 @@
+{
+  "success" : true,
+  "responseCode" : 333,
+  "message": {
+
+  },
+  "data":  {
+    "files": [
+            {
+              "name": "picture1.jpg",
+              "size": 902604,
+              "url": "http://www.bestmarketingspain.com/picts/laser-event.jpg",
+              "thumbnail_url": "http://www.bestmarketingspain.com/picts/laser-event.jpg",
+              "delete_url": "http://www.bestmarketingspain.com/picts/laser-event.jpg",
+              "delete_type": "DELETE"
+            }
+          ]
+  }
+    
+}

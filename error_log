@@ -1,0 +1,20 @@
+[25-Mar-2013 01:31:41] PHP Fatal error:  Class 'finfo' not found in /home2/takeawa2/public_html/app/Controller/AppController.php on line 85
+[25-Mar-2013 22:38:25] PHP Warning:  Unexpected character in input:  '\' (ASCII=92) state=1 in /home2/takeawa2/public_html/app/View/Emails/html/user_resetpassword.ctp on line 3
+[25-Mar-2013 22:38:25] PHP Parse error:  syntax error, unexpected T_STRING, expecting ',' or ';' in /home2/takeawa2/public_html/app/View/Emails/html/user_resetpassword.ctp on line 3
+[25-Mar-2013 22:42:29] PHP Warning:  Unexpected character in input:  '\' (ASCII=92) state=1 in /home2/takeawa2/public_html/app/View/Emails/html/user_resetpassword.ctp on line 3
+[25-Mar-2013 22:42:29] PHP Parse error:  syntax error, unexpected T_STRING, expecting ',' or ';' in /home2/takeawa2/public_html/app/View/Emails/html/user_resetpassword.ctp on line 3
+[25-Mar-2013 22:45:13] PHP Parse error:  syntax error, unexpected T_STRING, expecting ',' or ';' in /home2/takeawa2/public_html/app/View/Emails/html/user_resetpassword.ctp on line 4
+[25-Mar-2013 22:45:39] PHP Parse error:  syntax error, unexpected T_STRING, expecting ',' or ';' in /home2/takeawa2/public_html/app/View/Emails/html/user_resetpassword.ctp on line 4
+[25-Mar-2013 22:46:01] PHP Parse error:  syntax error, unexpected '/' in /home2/takeawa2/public_html/app/View/Emails/html/user_resetpassword.ctp on line 3
+[25-Mar-2013 22:46:45] PHP Parse error:  syntax error, unexpected T_STRING, expecting ',' or ';' in /home2/takeawa2/public_html/app/View/Emails/html/user_resetpassword.ctp on line 4
+[25-Mar-2013 22:48:38] PHP Parse error:  syntax error, unexpected '/' in /home2/takeawa2/public_html/app/View/Emails/html/user_resetpassword.ctp on line 3
+[25-Mar-2013 22:50:02] PHP Parse error:  syntax error, unexpected '/' in /home2/takeawa2/public_html/app/View/Emails/html/user_resetpassword.ctp on line 3
+[25-Mar-2013 22:52:53] PHP Warning:  Unexpected character in input:  '\' (ASCII=92) state=1 in /home2/takeawa2/public_html/app/View/Emails/html/user_resetpassword.ctp on line 3
+[25-Mar-2013 23:09:34] PHP Warning:  Unexpected character in input:  '\' (ASCII=92) state=1 in /home2/takeawa2/public_html/app/View/Emails/html/user_resetpassword.ctp on line 3
+[25-Mar-2013 23:09:34] PHP Parse error:  syntax error, unexpected T_STRING, expecting ',' or ';' in /home2/takeawa2/public_html/app/View/Emails/html/user_resetpassword.ctp on line 3
+[25-Mar-2013 23:10:09] PHP Warning:  Unexpected character in input:  '\' (ASCII=92) state=1 in /home2/takeawa2/public_html/app/View/Emails/html/user_resetpassword.ctp on line 3
+[26-Mar-2013 17:28:21] PHP Warning:  unlink(/home2/takeawa2/public_html/app/tmp/cache/models/myapp_cake_model_default_takeawa2_murali_live_friends) [<a href='function.unlink'>function.unlink</a>]: No such file or directory in /home2/takeawa2/public_html/lib/Cake/Cache/Engine/FileEngine.php on line 254
+[27-Mar-2013 11:47:45] CSRF state token does not match one provided.
+[27-Mar-2013 13:09:03] CSRF state token does not match one provided.
+[27-Mar-2013 13:13:24] CSRF state token does not match one provided.
+[27-Mar-2013 17:36:37] PHP Fatal error:  Class 'finfo' not found in /home2/takeawa2/public_html/app/Controller/AppController.php on line 85

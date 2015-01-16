@@ -1,0 +1,18 @@
+	<div class="modal-header invite-friends-modal-hdr">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		<h3 class="truncate">{{gallery.title}}</h3>
+	</div>
+	<div class="modal-body modal-body-follow add-event-form">
+		<div class="big-image">
+			<img ng-src="{{gallery.currentImage}}" alt="">
+		</div>
+		<div class="carrossel-scope" bt-carousel-it="gallery.images" ng-hide="gallery.images.length<=1">
+			<ul class="group list-carrossel">
+				<li ng-repeat="image in gallery.images" ng-class="{ current : gallery.currentIndex==$index }">
+					<a href="javascript: void(0);" ng-click="setCurrentImg($index)">
+						<img ng-src="{{image.src||image.thumbnail_url}}" width="55" height="55">
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>

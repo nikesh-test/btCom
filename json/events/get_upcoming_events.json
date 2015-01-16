@@ -1,0 +1,121 @@
+{	
+	"events" : [
+		        {
+		        	"date": {
+		        		"month": "Oct",
+		        		"day": 11,
+		        		"time_range" : {
+	                    	"from" : "12:00AM",
+	                    	"to" : "4:00PM"
+	                 	}
+                 	},
+		        	"title": "Going to movie", 
+		        	"id": 1513, 
+		        	"users": [
+			        	{
+			        		"id": 1
+			        	},
+			        	{
+			        		"id": 2
+			        	},
+			        	{
+			        		"id": 3
+			        	}
+		        	]
+		        },
+		         {
+	        		"date": {
+		        		"month": "Oct",
+		        		"day": 11,
+		        		"time_range" : {
+	                    	"from" : "12:00AM",
+	                    	"to" : "4:00PM"
+	                 	}
+                 	},
+		        	"title": "Going out with friends", 
+		        	"id": 1516, 
+		        	"users": [
+			        	{
+			        		"id": 1
+			        	},
+			        	{
+			        		"id": 2
+			        	},
+			        	{
+			        		"id": 3
+			        	},
+			        	{
+			        		"id": 4
+			        	},
+			        	{
+			        		"id": 5
+			        	},
+			        	{
+			        		"id": 6
+			        	}
+		        	]
+		        },
+		        {
+	        		"date": {
+		        		"month": "Oct",
+		        		"day": 11,
+		        		"time_range" : {
+	                    	"from" : "12:00AM",
+	                    	"to" : "4:00PM"
+	                 	}
+                 	},
+		        	"title": "Going to hospital", 
+		        	"id": 1517, 
+		        	"users": false
+		        },
+		        {
+	        		"date": {
+		        		"month": "Oct",
+		        		"day": 11,
+		        		"time_range" : {
+	                    	"from" : "12:00AM",
+	                    	"to" : "4:00PM"
+	                 	}
+                 	},
+		        	"title": "Playing soccer", 
+		        	"id": 1518, 
+		        	"users": [
+			        	{
+			        		"id": 1
+			        	},
+			        	{
+			        		"id": 2
+			        	},
+			        	{
+			        		"id": 3
+			        	},
+			        	{
+			        		"id": 4
+			        	},
+			        	{
+			        		"id": 5
+			        	}
+		        	]
+		        },
+		        {
+	        		"date": {
+		        		"month": "Oct",
+		        		"day": 11,
+		        		"time_range" : {
+	                    	"from" : "12:00AM",
+	                    	"to" : "4:00PM"
+	                 	}
+                 	},
+		        	"title": "Play poker", 
+		        	"id": 1519, 
+		        	"users": [
+			        	{
+			        		"id": 1
+			        	},
+			        	{
+			        		"id": 2
+			        	}
+		        	]
+		        } 
+	]
+}

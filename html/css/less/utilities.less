@@ -1,0 +1,89 @@
+.upper-small{
+	font-size: @headingUpperSmall;
+	text-transform: uppercase;
+}
+
+.gray-header{
+	background: #dfdfdf;
+	padding: @paddingHeader;
+	font-weight: 400;
+	color: #8e8e8e;
+	margin-bottom: 12px;
+}
+
+.gray-link{
+	color: @gray;
+	&:hover{
+		color: @brandBlue;
+	}
+}
+.light-gray{
+	color: @grayLight;
+}
+
+.rd{
+	.border-radius(4px);
+}
+
+.small-text{
+	font-size: @smallFontSize;
+}
+
+.upper{
+	text-transform: uppercase;
+}
+
+// Columns
+.col-narrow{
+	width: @desktopNarrowCol;
+}
+.col-wide{
+	width: @desktopWideCol;
+}
+.col-margin{
+	margin-right: @colRightMargin;
+}
+
+// Clear fix
+.group {
+	zoom: 1;
+	&:before, &:after {
+	  content: "";
+	  display: table;
+	}
+	&:after { 
+		clear: both;
+	} 
+}
+
+// Quick floats
+.pull-right {
+  float: right;
+}
+.pull-left {
+  float: left;
+}
+
+// Toggling content
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+.clr { 
+	clear: both 
+}
+
+.skip {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block
+}
+
+.truncate{
+	width: 112px;
+	display: inline-block;
+	.text-overflow();
+}

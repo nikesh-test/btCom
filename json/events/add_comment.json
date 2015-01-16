@@ -1,0 +1,11 @@
+{
+	"success" : true,
+	"responseCode" : 333,
+	"message": {
+	},
+	"data":  {
+	  	"user_id" : 4,
+	  	"id" : 1,
+	  	"entry" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In at velit erat, sit amet condimentum sapien. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
+	} 
+}

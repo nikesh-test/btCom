@@ -1,0 +1,37 @@
+html {
+  font-size: 100%;
+  overflow-y: scroll
+}
+body {
+  font-size: 13px;
+  line-height: 1
+}
+::-moz-selection {
+  background: @blueDark;
+  color: #fff;
+  text-shadow:none
+}
+::selection {
+  background: @blueDark;
+  color: #fff;
+  text-shadow: none
+}
+a {
+  color: @blueDark;
+  text-decoration: none;
+  .transition(color .2s linear);
+  &:focus {
+    outline: thin dotted;
+  }
+  &:hover, &:active {
+    outline: 0;
+    text-decoration: none;
+  }
+}
+
+h1,
+h2,
+h3,
+h4{
+  letter-spacing: -.04em;
+}

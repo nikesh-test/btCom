@@ -1,0 +1,207 @@
+function budstimeMainCtrl(ng, wi, aj, utils){
+	
+	var $ = jQuery,
+		serverController = "friends",
+		eventServerController = "event",
+		actions = {
+			getUsers : "get_users",
+			getGroups : "get_groups.json",
+			getFollowing : "get_following",
+			setNewEvent : "get_day_response"
+		};
+
+	ng.toggleAditional = function(){
+		ng.e.showAditionalOpts = ng.e.showAditionalOpts ? false : true;
+	};
+
+	ng.privacyToggle = function( current ){
+		ng.e.privacy = current;
+	};
+
+	var addEvent = function(){
+
+		var default_form = { 
+			name : '',
+			details: '',
+			date: {
+				date_range:{
+					from: '',
+					to: ''
+				},
+				time_range:{
+					from: '',
+					to: ''
+				}
+			},
+			location: '',
+			privacy: 'public',
+			friends: [],
+			visible_for: 0,
+			share_on_facebook: false,
+			youtube: '',
+			showAditionalOpts: false
+		};
+	
+		$.ajax({
+ 			  url: root + 'events/addevent',
+  			  type: 'POST',
+ 			  data: $('#EventAddeventForm').serialize()
+ 
+		  }).done(function(response) {
+ 
+ 			  if(response){
+ 			  		// console.log( response );
+  				  var _d = $.parseJSON(response);
+ 				  if(_d.success){
+ 					  if(parseInt(_d.data.code) == 0){
+ 						  window.location.href = root + 'users/home';
+  					  }
+
+ 				  } else {
+ 
+					  alert('Sorry! we are not able to add event, Please try again.')
+ 
+				  }
+ 			  }
+ 		  }).fail(function(response) {
+ 			  alert('Sorry! we are not able to add event, Please try again.')
+ 		  });	
+		
+		utils.AjaxCall(eventServerController, actions.setNewEvent, ng.e, ng, function(data, status){
+			if(status == "success"){
+				console.log( ng.e ); // event object posted
+				var new_date = ng.e.date.date_range.from;
+				utils.updateCurrentDate( new_date, ng);
+				utils.updateEvents(ng);
+				ng.e = default_form;
+			}
+		});
+	};
+
+
+	ng.openAddEvent = function(){
+		utils.OpenModal({
+			tmpl: root + 'events/addevent',
+			scope: ng, 
+			action: function(){
+				addEvent();
+			}
+		});
+	};
+
+	ng.inviteFriends = function(){
+		utils.OpenModal({
+			tmpl: root + 'partials/invite-friends.html',
+			scope: ng, 
+			action: function(){
+				var i, friends_selected = [];
+				for(i=0;i<ng.invited.length;i++){
+					ng.invited[i].checked ? friends_selected.push(ng.invited[i].id) : '';
+				}
+				ng.$apply(function(){
+					$('#event_invite_userlist').val(JSON.stringify(friends_selected));
+					ng.e.friends = friends_selected;
+				});
+			}
+		});
+	};
+
+	ng.openFileUpload = function(){
+		utils.OpenModal({
+			tmpl: root + 'partials/fileupload.html',
+			scope: ng, 
+			action: function(){
+				console.log( 'ok' );
+			}
+		});
+	};
+
+
+
+
+	ng.searchResult = function( query ){
+		if(query && query !== ""){
+			ng.renderSearch = true;
+			ng.searchResultDestroy = false;
+		}
+	};
+
+	ng.removeSearchQuery = function(){
+		ng.renderSearch = false;
+		ng.searchResultDestroy = true;			
+	};
+
+	ng.searchTimeResult = function( ){
+		ng.renderTimeSearch = true;
+		ng.searchTimeResultDestroy = false;
+	};
+
+	ng.removeTimeSearchQuery = function(){
+		ng.renderTimeSearch = false;
+		ng.searchTimeResultDestroy = true;
+	};
+
+
+	ng.openProfilePage = function( id ){
+		console.log( id );
+	};
+
+	ng.getUserInfo = function( id, request ){
+
+		var user = getUserById(id);
+	
+		if(user.length){
+			user = user[0];
+			return eval('user.'+ request) ? eval('user.'+ request) : '';
+		}
+	};
+
+	var getUserById = function( id ){
+		return $.grep(ng.users, function(e){ 
+			return e.id == id;
+			 });		
+	};
+
+	var getAllUsersInfo = function(){
+		utils.AjaxCall('friends', actions.getUsers, '', ng,function(data, status){
+			ng.users = data.data.users;
+		});
+	};
+
+	var getUserGroups = function(){
+		utils.AjaxCall('groups', actions.getGroups, '', ng,function(data, status){
+			if(status == "success"){
+				ng.groups = data.groups;
+				ng.group_select = data.groups[0].id;
+			}
+		});
+	};
+
+	ng.toggleCounting = function( checked ){
+		checked ? ng.invite.count++ : ng.invite.count--;
+	};
+
+	var get_invite_list = function(){
+		utils.AjaxCall(serverController, actions.getFollowing, 'true', ng, function(data, status){
+			if(status == "success"){
+				ng.invited = data.data.following;
+				ng.invite.count = 0;
+			}
+		});
+	};
+
+	var init = function(){
+
+		// get all user data
+		getAllUsersInfo();
+		getUserGroups();
+		get_invite_list();
+		ng.invite = {};
+		ng.renderSearch = false;
+		ng.searchResultDestroy = '';
+		ng.facebookSync = false;
+	};
+
+	init();
+}
+budstimeMainCtrl.$inject = ['$scope', '$window', '$http', 'BudsTimeUtils'];

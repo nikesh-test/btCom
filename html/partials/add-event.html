@@ -1,0 +1,102 @@
+				  <div class="modal-header">
+				    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				    <h3 id="add_event">New event</h3>
+				  </div>
+				  <div class="modal-body add-event-modal">
+				   	<form action="javascript:;" name="add_event" class="add-event-form">
+				   		<fieldset>
+				   			<legend class="hide">Add event form</legend>
+				   			<ol>
+				   				<li>
+				   					<label for="add-event-name">Name</label>
+				   					<input type="text" name="name" ng-model="e.name" class="input-xxlarge" placeholder="Ex.: My birthday">
+				   				</li>
+				   				<li bt-slide-toggle="!e.showAditionalOpts">
+				   					<label for="add-event-detail">Details</label>
+				   					<textarea ng-model="e.details" id="add-event-detail" class="input-xxlarge"></textarea>
+				   				</li>
+				   				<li class="pull-left">
+				   					<label for="add-event-date">When?</label>
+				   					<input type="text" ng-model="e.date.date_range.from" name="event-date" id="add-event-date" class="input-small input-calendar datepicker" data-set-current-date="e.date.date_range.from">
+				   					
+				   					<input type="text" ng-model="e.date.time_range.from" name="event-time" id="event-time" data-set-current-time="from" class="input-mini input-hour" bt-timepicker="e.date.time_range.from" placeholder="00:00">
+				   				</li>
+				   				<li class="col-2 pull-left wrap-to-time">
+				   					<label class="to-label pull-left" for="add-event-date-2">to:</label>
+				   					<input type="text" ng-model="e.date.date_range.to" name="event-date" id="add-event-date-2" class="input-small input-calendar datepicker" data-set-current-date="e.date.date_range.to">
+				   					<input type="text" ng-model="e.date.time_range.to" name="event-time-to" id="event-time-to" data-set-current-time="to" class="input-mini input-hour last" bt-timepicker="e.date.time_range.to" placeholder="00:00">
+				   				</li>
+				   				<li class="col-1 clr" bt-slide-toggle="!e.showAditionalOpts">
+				   					<label for="add-event-place">Where?</label>
+				   					<input type="text" ng-model="e.location" id="add-event-place" class="input-xxlarge" placeholder="Add a location">
+				   				</li>
+				   			</ol>
+				   			<ol class="group clr last">
+				   				<li class="pull-left wrap-privacy">
+				   					<div class="btn-group" ng-init="e.privacy='public'">
+									  <button class="btn" ng-class="{ active : e.privacy=='public' }" ng-click="privacyToggle('public')">
+									  	public
+									  	<input type="radio" ng-model="e.privacy" value="public" class="hide">
+									  </button>
+									  <button class="btn" ng-class="{ active : e.privacy=='private' }" ng-click="privacyToggle('private')">
+									  	private
+									  	<input type="radio" ng-model="e.privacy" value="private" class="hide">
+									  </button>
+									</div>
+				   				</li>
+				   				<li class="pull-left">
+				   					<a href="javascript:;" class="btn" ng-click="inviteFriends()" ng-init="e.friends=[]">
+						  				<span ng-hide="e.friends.length>0">invite friends</span>
+						  				<span ng-hide="e.friends.length<1">{{e.friends.length}} friends</span>
+						  				<input type="hidden" ng-model="e.friends">
+						  			</a>
+				   				</li>
+				   				<li class="pull-right" ng-init="e.showAditionalOpts=false">
+				   					<span class="btn btn-aditional-opts" ng-class="{active: e.showAditionalOpts}" ng-click="toggleAditional()">
+				   						<span class="arrow-toogle"></span>
+						  				aditional options
+						  			</span>
+				   				</li>
+				   			</ol>
+				   			<fieldset id="add-event-aditional" class="clr" style="display: none" bt-slide-toggle="e.showAditionalOpts">
+				   				<div class="deep-box">
+				   					<ul>
+				   						<li class="pull-left">
+										   	<select ng-options="group.id as group.name for group in groups" ng-model="e.visible_for" class="event-privacy-slct">
+										   	  <option value="" style="display:none">Visible to everyone</option>
+									  		</select>
+						   				</li>
+						   				<li class="pull-right">
+								   		<span class="btn" ng-click="toggleShare()" ng-class="{ active : e.share_on_facebook }">
+							  				<input type="checkbox" ng-model="e.share_on_facebook" class="check-in-btn">
+							  				share on facebook
+							  			</span>
+							  			</li>
+							  			<li class="clr control-group" ng-class="{ error : e.youtube && add_event.youtube.$error.btRegexValidate }">
+							  				<label for="add-event-youtube">Youtube video</label>
+							  				<div class="youtube-preview">
+				   								<img ng-show="e.youtube && !add_event.youtube.$error.btRegexValidate" src="/" alt="You tube image preview" bt-youtube-preview="e.youtube">
+				   							</div>
+				   							<input type="text" name="youtube" ng-model="e.youtube" class="input-youtube"  placeholder="Ex.: http://www.youtube.com/watch?v=aBcDXyZ" bt-regex-validate="^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$">
+				   							<span class="text-error bellow-error clr" ng-show="e.youtube && add_event.youtube.$error.btRegexValidate">Please, insert a valid youtube video url.</span>
+				   							{{youtube}}
+				   							
+										</li>
+										<li class="clr hide">
+								  			<div class="btn-group upload-btns">
+											  <button class="btn btn-small">
+											  	<span class="upload-icon"></span> photo
+											  </button>
+											</div>
+										</li>
+									</ul>									
+					   				<span class="arrow-top"></span>
+				   				</div>
+				   			</fieldset>
+				   		</fieldset>
+				   	</form>
+				  </div>
+				  <div class="modal-footer">
+				    <button class="btn pull-left btn-cancel">Cancel</button>
+				    <button class="btn btn-warning btn-confirm" ng-disabled="!e.name">Add event</button>
+				  </div>

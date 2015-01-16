@@ -1,0 +1,34 @@
+{
+	"users": [
+		{
+			"id": 1, 
+			"name": "Cafú Eduard",  
+			"image_src": "http://localhost/budstime/img/profile/ronaldo-44x44.jpg"
+		},
+		{
+			"id": 2, 
+			"name": "Kaká Silvas",  
+			"image_src": "http://localhost/budstime/img/profile/kaka-58x58.jpg"
+		},
+		{
+			"id": 3, 
+			"name": "Rivaldo Souza",  
+			"image_src": "http://localhost/budstime/img/profile/ronaldo-44x44.jpg"
+		},
+		{
+			"id": 4, 
+			"name": "Fernando Eduard",  
+			"image_src": "http://localhost/budstime/img/profile/robinho-44x44.jpg"
+		},
+		{
+			"id": 5, 
+			"name": "Mário Silvas",  
+			"image_src": "http://localhost/budstime/img/profile/ronaldo-44x44.jpg"
+		},
+		{
+			"id": 6,
+			"name": "Ands Souza",  
+			"image_src": "http://localhost/budstime/img/profile/robinho-44x44.jpg"
+		}
+	]
+}

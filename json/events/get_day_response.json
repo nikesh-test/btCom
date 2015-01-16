@@ -1,0 +1,128 @@
+{
+  "success" : true,
+  "responseCode" : 333,
+  "message": {
+
+  },
+  "data": {
+          "sections": [
+              {
+                  "time_range" : {
+                    "from" : "12:00AM",
+                    "to" : "4:00PM"
+                  },
+                  "type" : "friend_events",
+                  "friend_events" : [ 
+                    {
+                      "id" : 50, 
+                      "user_id": 1,
+                      "title" : "Going to movie"
+                    },
+                    {
+                      "id" : 30,
+                      "user_id": 2,
+                      "title" : "Work hard to get things done"
+                    },
+                    {
+                      "id" : 12,
+                      "user_id": 3,
+                      "title" : "Going to movie"
+                    },
+                    {
+                      "id" : 365,
+                      "user_id": 4,
+                      "title" : "Going to movie"
+                    },
+                    {
+                      "id" : 111,
+                      "user_id": 5,
+                      "title" : "Going to movie"
+                    },
+                    {
+                      "id" : 895,
+                      "user_id": 6,
+                      "title" : "Going to movie"
+                    }
+                  ]
+              }, 
+              {
+                  "time_range" : {
+                    "from" : "4:00PM",
+                    "to" : "9:00PM"
+                  },
+                  "type" : "event", 
+                  "event" : {
+                      "id" : 1356,
+                      "title" : "Going out with friends",
+                      "author" : "true",
+                      "location" : "New York City",
+                      "users" : [ { "id" : 4 }, { "id": 5 } ],
+                      "detail" : "Don't forget to bring coke, all right?",
+                      "images" : [ 
+                        { "id": 5136, "thumbnail_url": "/img/event-img-thumb.jpg", "title": "People working" }, 
+                        { "id": 5137, "thumbnail_url": "/img/event-img-thumb.jpg", "title": "People working" }, 
+                        { "id": 5138, "thumbnail_url": "/img/event-img-thumb.jpg", "title": "People working" }, 
+                        { "id": 5139, "thumbnail_url": "/img/event-img-thumb.jpg", "title": "People working" }, 
+                        { "id": 5140, "thumbnail_url": "/img/event-img-thumb.jpg", "title": "People working" }, 
+                        { "id": 5141, "thumbnail_url": "/img/event-img-thumb.jpg", "title": "People working" }, 
+                        { "id": 5142, "thumbnail_url": "/img/event-img-thumb.jpg", "title": "People working" }
+                      ],
+                      "videos" : [
+                        "https://www.youtube.com/watch?v=QYf0vzP50eg",
+                        "http://www.youtube.com/watch?v=rcsJ7QPgjJw"
+                      ],
+                      "comments" : {
+                        "comments_length": 6,
+                        "comments_left" : 3,
+                        "last_comments" : [
+                          {
+                            "user_id" : 1,
+                            "id" : 1,
+                            "entry" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem assumenda."
+                          },
+                          {
+                            "user_id" : 2,
+                            "id" : 2,
+                            "entry" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem assumenda."
+                          },
+                          {
+                            "user_id" : 3,
+                            "id" : 3,
+                            "entry" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem assumenda."
+                          }          
+                        ]
+                      }
+                  }
+              }, 
+              {
+                  "time_range" : {
+                    "from" : "9:00AM",
+                    "to" : "12:00PM"
+                  },
+                  "type" : "friend_events",
+                  "friend_events" : [ 
+                    {
+                      "id" : 70,
+                      "user_id" : 1,
+                      "title" : "Going to movie"
+                    },
+                    {
+                      "id" : 67,
+                      "user_id": 2,
+                      "title" : "Going to movie"
+                    },
+                    {
+                      "id" : 8,
+                      "user_id": 3,
+                      "title" : "Going to movie"
+                    },
+                    {
+                      "id" : 76,
+                      "user_id": 4,
+                      "title" : "Going to movie"
+                    }
+                  ]
+              }
+           ]
+        }
+}

@@ -1,0 +1,19 @@
+{
+	"comments" : [
+		{
+		  "user_id": 1,
+		  "id" : 1,
+		  "entry" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem assumenda."
+		},
+		{
+		  "user_id": 4,
+		  "id" : 2,
+		  "entry" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem assumenda."
+		},
+		{
+		  "user_id": 6,
+		  "id" : 3,
+		  "entry" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem assumenda."
+		}          
+	]
+}

@@ -1,0 +1,33 @@
+	<div class="modal-header invite-friends-modal-hdr">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		<h3>Invite friends</h3>
+	</div>
+	<div class="modal-body modal-body-follow">
+		<div class="follow-search invite-friends-search">
+			<span class="selected-itens" ng-hide="invite.count<1">
+				<strong class="selected-count">{{invite.count}}</strong> selected
+			</span>
+			<input type="text" class="filter-user-input" ng-model="filterInviteList" placeholder="Filter by name...">
+		</div>
+		<div class="follow-list invite-friends-list group" bt-scroll-it="invite" bt-max-itens="5" bt-modal="#invite-friends">
+			<ul>
+				<li ng-repeat="u in invited|filter:filterInviteList" ng-class="{ last: $last }" ng-init="u.name=getUserInfo(u.id, 'name')">
+					<a href="#" class="group">
+						<input type="checkbox" class="check" ng-model="u.checked" ng-click="toggleCounting(u.checked)">
+		  				<span class="img-inner event-owner">
+							<img ng-src="{{getUserInfo(u.id, 'image_src')}}" height="37" width="37" alt="{{u.name}} profile picture" class="img-circle">
+						</span>
+						<span class="user-name">{{u.name}}</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button class="btn pull-left btn-cancel">
+			Cancel
+		</button>
+		<button class="btn btn-warning btn-confirm">
+			Confirm
+		</button>
+	</div>

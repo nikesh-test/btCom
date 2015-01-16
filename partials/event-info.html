@@ -1,0 +1,122 @@
+<div class="modal-header ng-scope">
+	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	<h3 id="user-msgn-modal" class="ng-binding">{{eventDetail.title}}</h3>
+	<button class="btn btn-small btn-success" ng-hide="!eventDetail.show_join&&!eventDetail.author" ng-class="{ join : eventDetail.show_join }">
+		<span ng-hide="!eventDetail.show_join" ng-click="joinAction(eventDetail)">join</span>
+		<span ng-hide="!eventDetail.author" ng-click="editEvent(eventDetail.id);">
+			edit
+		</span>	
+	</button>
+</div>
+<div class="event-info-body group">
+	<div class="col-left">
+		<ul class="event-details-list">
+			<li><span class="label">Date</span><time class="value">{{eventDetail.date.date_range.from}} to {{eventDetail.date.date_range.to}}</time>
+			</li>
+			<li><span class="label">Time</span><time class="value">{{eventDetail.date.time_range.from}} to {{eventDetail.date.time_range.to}}</time>		
+			</li>
+			<li ng-hide="!eventDetail.location.length">
+				<span class="label">Place</span><span class="value">{{eventDetail.location}}</span>
+			</li>
+			<li ng-hide="!eventDetail.users.length">
+				<div class="buds-attending">
+					<span class="label label-buds pull-left">With</span>
+					<a ng-repeat="u in eventDetail.users" data-tooltip-it="eventDetail.users" href="javascript: void(0);" class="profile-link img-inner" ng-init="u.name=getUserInfo(u.id, 'name')" title="{{u.name}}">
+						<img ng-src="{{getUserInfo(u.id, 'image_src')}}" height="26" width="26" alt="{{u.name}} profile picture" class="img-circle">
+					</a>
+				</div>
+			</li>
+			<li><span class="label">Privacy</span><span class="value">{{eventDetail.privacy}}</span>		
+			</li>
+			<li class="btm-separator" ng-hide="!eventDetail.detail">
+				<span class="label block">Description</span>
+				<p class="value">{{eventDetail.detail}}</p>
+			</li>
+		</ul>
+		
+		<div class="gallery-box" ng-hide="!eventDetail.images.length">
+			<div class="gallery-box-hd group">
+				<a href="#" class="link-view-album pull-right"><span class="expand-icon"></span>view album</a>
+				<span class="label">Photos</span>
+			</div>
+			<div class="carrossel-scope" bt-carousel-it="eventDetail.images">
+				<ul class="group list-carrossel">
+ 					<li ng-repeat="image in eventDetail.images">
+ 						<a href="javascript: void(0);" bt-show-image="eventDetail.id" bt-index="{{$index}}">
+ 							<img ng-src="{{image.src}}" width="55" height="55" alt="{{image.title}}">
+ 						</a>
+ 					</li>
+				</ul>
+			</div>		
+		</div>
+		
+		<div class="video-preview-wrapper group" ng-hide="!eventDetail.videos.length" bt-nav-video="eventDetail.videos.length">
+			<span class="label block m-btm">Video</span>
+			<div class="video-preview-nav" ng-hide="eventDetail.videos.length<2">
+				<span class="video-preview-nav-left skip pull-left">Anterior</span>
+				<span class="video-preview-nav-right skip pull-left">Próxima</span>
+				<span class="video-preview-nav-ref pull-left">
+					<span class="current-video-numb">1</span> /
+					{{eventDetail.videos.length}}
+				</span>
+			</div>
+			<div id="video-list-preview" class="videos-list group">
+				<div class="video-box group" ng-repeat="(key, video) in eventDetail.videos" ng-class="{ hide : !$first, current : $first } ">
+					<div class="thumbnail pointer" bt-youtube-click="video">
+						<img bt-youtube-preview="video" class="video-medium-thumb rd">
+						<span class="medium-play-icon"></span>
+					</div>
+					<div class="entry" bt-youtube-info="video"></div>
+				</div>	
+			</div>
+		</div>
+	</div>
+	<div class="col-right">		
+		<div class="comment-box">
+			<div class="comment-header">											
+				<span class="gray-link" bt-show-comments="eventDetail.id" ng-hide="eventDetail.comments.comments_left<1">
+					<span class="comment-icon"></span>
+					<span class="text">see all {{eventDetail.comments.comments_length}} comments</span>
+				</span>	
+				
+				<span class="gray-link" ng-hide="eventDetail.comments.comments_left>0">
+					<span class="comment-icon"></span>
+					{{eventDetail.comments.comments_length}} comments
+				</span>
+			</div>
+
+			<div class="comment-list media">
+			
+				<div class="comment-list-{{eventDetail.id}}">
+					<div class="comment-item" ng-repeat="comment in eventDetail.comments.last_comments">
+						<button type="button" class="close v_hdn" data-tooltip-it title="Remove comment" bt-tooltip="Remove this comment" ng-click="removeComment(comment.id, $index, event.comments)">×</button>
+						
+						<a href="#" bt-open-profile="comment.user_id" class="profile-link pull-left img-inner">
+							<img ng-src="{{getUserInfo(comment.user_id, 'image_src')}}" height="26" width="26" alt="{{getUserInfo(comment.user_id, 'name')}} profile picture" class="img-circle">
+						</a>
+						<div class="comment-body">
+							<a href="#" bt-open-profile="comment.user_id" class="comment-author gray-link">{{getUserInfo(comment.user_id, 'name')}}</a>
+							<p class="light-gray">{{comment.entry}}</p>
+						</div>
+					</div>
+				</div>
+				
+				<div class="comment-item">
+					<a href="/users/home" class="profile-link pull-left img-inner">
+						<img ng-src="{{getUserInfo(currentUser.id, 'image_src')}}" height="26" width="26" class="img-circle profilePhoto">
+					</a>
+					
+					<div class="comment-body media-body">
+						<form>			
+							<textarea bt-add-comment="eventDetail" class="comment-field" placeholder="your comment..."></textarea>
+						</form>
+						<div class="check hide">
+							<input type="checkbox" id="sendwithenter" class="pull-left" ng-model="selected"><label for="sendwithenter">Send comment by typing Enter</label>
+						</div>
+					</div>
+				</div>
+				
+			</div>										
+		</div><!-- comment-box -->
+	</div>	
+</div>

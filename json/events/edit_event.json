@@ -1,0 +1,42 @@
+{
+  "success" : true,
+  "responseCode" : 333,
+  "message": {
+
+  },
+  "data": {
+    "event" : { 
+        "id" : 50,
+        "eventname" : "Party with friends",
+        "eventdesc": "Let's get together, folks!",
+        "date": {
+          "date_range": {
+            "from" : "03/02/2013",
+            "to" : "03/03/2013"
+          },
+          "time_range" : {
+            "from" : "12:00AM",
+            "to" : "4:00PM"
+          }
+        },
+        "location": "Brazil",
+        "privacy": "public",
+        "users" : [ { "id" : 4 }, { "id": 5 } ],
+        "images" : [ 
+         { "id": 5136, "src": "/img/event-img-thumb.jpg" }, 
+         { "id": 5137, "src": "/img/event-img-thumb.jpg" }, 
+         { "id": 5138, "src": "/img/event-img-thumb.jpg" }, 
+         { "id": 5139, "src": "/img/event-img-thumb.jpg" }, 
+         { "id": 5140, "src": "/img/event-img-thumb.jpg" }, 
+         { "id": 5141, "src": "/img/event-img-thumb.jpg" }, 
+         { "id": 5142, "src": "/img/event-img-thumb.jpg" }
+        ],
+        "videos" : [
+         "http://www.youtube.com/watch?v=60MQ3AG1c8o",
+         "http://www.youtube.com/watch?v=Rjq2_Mg3pSA",
+         "http://www.youtube.com/watch?v=F4yhA3DUkn0"
+        ]        
+      }
+  }
+}
+

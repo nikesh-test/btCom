@@ -1,0 +1,94 @@
+			<div class="col-wide-top-space"></div>
+			<div class="your-buds-currently">
+				<header class="your-buds-hd group">
+					<ul class="search-tabs">
+						<li class="current">
+							<a href="#" bt-show-tab="#users-tab-page">
+								<span class="user-darken-icon icon skip">People</span>
+								<span class="search-tab-counter">{{users_length}}</span>
+							</a>					
+						</li>
+						<li class="last">
+							<a href="#" bt-show-tab="#events-tab-page">
+								<span class="calendar-darken-icon icon skip">Events</span>
+								<span class="search-tab-counter">{{events_length}}</span>
+							</a>					
+						</li>
+					</ul>
+					<button type="button" class="close pull-left" ng-click="removeSearchQuery()" data-original-title="Clear this query" data-tooltip-it>×</button>
+					<p class="form-heading search-title"><span class="darken">{{results_length}}</span> search results for “<span class="darken">{{searchTerm}}</span>”</p>
+				</header>
+				<div class="tabs-scope group">
+					<div class="your-buds-content hide" id="events-tab-page">
+						<p class="search-tab-title">Events</p>
+						<div class="buds-event-box group" ng-repeat="event in events_search">
+							<div class="group" bt-event-info="event.id">
+								<div class="profile-pic">
+									<a href="javascript: void(0);" class="img-inner square-profile" data-tooltip-it="event" data-original-title="{{getUserInfo(event.user_id, 'name')}}">
+										<img ng-src="{{getUserInfo(event.user_id, 'image_src')}}" height="60" width="60" alt="{{getUserInfo(event.user_id, 'name')}}" class="rd">
+									</a>
+								</div>
+								<div class="event-main-info">
+									<p class="event-title truncate">{{event.title}}</p>
+									<div class="buds-attending" ng-hide="!event.users.length">
+										
+										<a href="javascript: void(0);" ng-repeat="(key, u) in event.users | limitTo:4" class="profile-link img-inner" title="{{getUserInfo(u.id, 'name')}}" ng-click="openProfilePage(u.id)" data-tooltip-it="u">
+											<img ng-src="{{getUserInfo(u.id, 'image_src')}}" height="26" width="26" alt="{{getUserInfo(u.id, 'name')}} profile picture" class="img-circle">
+										</a>
+										
+										<a href="javascript: void(0);" class="small-circle plus-circle pull-right" ng-show="event.users.length > 4">{{event.users.length-4}}+</a>
+										
+									</div>
+								</div>
+								<div class="event-aux-info">
+									<ul>
+										<li class="highlight"><span class="calendar-icon-min icon-min"></span> {{event.date.date}}</li>
+										<li><span class="clock-icon-min icon-min"></span> {{event.date.time_range.from}} - {{event.date.time_range.to}}</li>
+										<li><span class="place-icon-min icon-min"></span> {{event.location}}</li>
+									</ul>
+								</div>
+							</div>	
+							<div class="event-status" ng-switch on="event.request.sent">
+								<span ng-switch-when="true" ng-switch on="event.request.status">
+									<span ng-switch-when="accepted" data-tooltip-it title="Accepted the event" class="thumbs-up-icon"></span>
+									<span ng-switch-when="declined" data-tooltip-it title="Declined the event" class="thumbs-down-icon"></span>
+								</span>
+								<button class="btn btn-small btn-blue join-btn" ng-switch-when="false" ng-click="joinAction(event)">join</button>
+							</div>				
+						</div>
+						<footer class="your-buds-ft hide">
+							<a href="javascript: void(0);" class="load-more" 
+	                        	ng-click="load_more_events()"
+	                        	ng-hide="!bud_events.length || currentPage == events_pagination || !events_pagination">load more</a>
+						</footer>
+					</div>
+					<div class="your-buds-content" id="users-tab-page">
+						<p class="search-tab-title">People</p>
+						<div class="buds-event-box group" ng-repeat="user in users_search">
+							<div class="profile-pic" bt-open-profile="user.id">
+								<a href="javascript: void(0);" class="img-inner square-profile" data-tooltip-it="user" data-original-title="{{user.name}}">
+									<img ng-src="{{user.image_src}}" height="60" width="60" alt="{{user.name}}" class="rd">
+								</a>
+							</div>
+							<div class="event-aux-info user-aux-info">
+								<strong class="username">{{user.name}}</strong>
+								<span class="company"><span class="job-min-icon"></span>{{user.company}}</span>
+								<button class="btn pull-left btn-friend-actions" bt-is-friend="user.is_friend">
+									<span class="user-req-icon n-icon pull-left">&nbsp;</span>
+									<span class="friend btn-text" ng-click="removeFriend(user)">
+										<span class="default">Friend</span>
+										<span class="text-error hover hide">Remove friend</span>
+									</span>
+									<span class="not-friend btn-text hide" ng-click="addFriend(user)">
+										<span class="default">Not a Friend</span>
+										<span class="text-success hover hide">Add as friend</span>
+									</span>
+								</button>
+							</div>						
+						</div>
+					</div>
+				</div>
+				<footer class="your-buds-ft hide" ng-class="{ show: toggleBuds }">
+					<a href="javascript: void(0);" class="load-more" ng-click="load_more_events()">load more</a>
+				</footer>
+			</div>

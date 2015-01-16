@@ -1,0 +1,127 @@
+<div class="your-buds-currently edit-event-wrapper">
+	<header class="your-buds-hd edit-event-hd group">
+		<button class="btn btn-small btn-danger detele-event" ng-click="removeEvent(Event.id)">remove event</button>
+		<div class="group">
+			<button type="button" class="close pull-left" ng-click="destroyEditEvent()" title="Back to previous page" data-tooltip-it>×</button>
+			<p class="form-heading search-title">Edit "<span class="darken truncate edit-event-title">{{Event.eventname}}</span>"</p>
+		</div>
+	</header>
+	<div class="edit-event-bd">
+		<div ng-hide="!updateSuccess" class="alert alert-success">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<p>This event has been updated successfully!</p>
+		</div>
+		<form action="#" class="add-event-form" name="add_event">
+			<fieldset>
+				<legend class="hide">Add event form</legend>
+				<ol class="ng-date-wrapper">
+					<li>
+						<label for="add-event-name">Name</label>
+						<input type="text" name="data[Event][eventname]" ng-model="Event.eventname" class="input-xxlarge" placeholder="Ex.: My birthday">
+					</li>
+					<li bt-slide-toggle="!Event.showAditionalOpts">
+						<label for="add-event-detail">Details</label>
+						<textarea ng-model="Event.eventdesc" id="add-event-detail" class="input-xxlarge" name="data[Event][eventdesc]"></textarea>
+					</li>
+					<li class="pull-left">
+						<label for="add-event-date">When?</label>
+						<input type="text" ng-model="Event.date.date_range.from" name="data[Event][eventfromdate]" id="add-event-date" class="input-small input-calendar datepicker ng-date-from" data-set-current-date="Event.date.date_range.from" >
+						
+						<input type="text" ng-model="Event.date.time_range.from" name="data[Event][eventfromtime]" id="event-time" data-set-current-time="from" class="input-mini input-hour ng-time-from" bt-timepicker="Event.date.time_range.from" placeholder="00:00"  >
+					</li>
+					<li class="col-2 pull-left wrap-to-time">
+						<label class="to-label pull-left" for="add-event-date-2">to:</label>
+						<input type="text" ng-model="Event.date.date_range.to" name="data[Event][eventtodate]" id="add-event-date-2" class="input-small input-calendar datepicker ng-date-to" data-set-current-date="Event.date.date_range.to"  >
+						<input type="text" ng-model="Event.date.time_range.to" name="data[Event][eventtotime]" id="event-time-to" data-set-current-time="to" class="input-mini input-hour ng-time-to last" bt-timepicker="Event.date.time_range.to" placeholder="00:00" >
+					</li>
+					<li class="col-1 clr" bt-slide-toggle="!Event.showAditionalOpts">
+						<label for="add-event-place">Where?</label>
+						<input type="text" ng-model="Event.location" id="add-event-place" class="input-xxlarge" placeholder="Add a location" name="data[Event][eventlocation]">
+					</li>
+				</ol>
+				<ol class="group clr last">
+					<li class="pull-left wrap-privacy">
+						<div class="btn-group" ng-init="Event.eventprivacy='public'">
+						  <span class="btn" ng-class="{ active : Event.eventprivacy=='public' }" ng-click="privacyToggle('public')" name="data[Event][eventprivacy]">
+						  	public
+						  	<input type="radio" ng-model="Event.eventprivacy" value="public" class="hide">
+						  </span>
+						  <span class="btn" ng-class="{ active : Event.eventprivacy=='private' }" ng-click="privacyToggle('private')" name="data[Event][eventprivacy]">
+						  	private
+						  	<input type="radio" ng-model="Event.eventprivacy" value="private" class="hide">
+						  </span>
+						</div>
+					</li>
+					<li class="pull-left">
+						<a href="javascript:;" class="btn" ng-click="inviteFriends()" ng-init="Event.userlist=[]">
+			  				<span ng-hide="Event.userlist.length>0">invite friends</span>
+			  				<span ng-hide="Event.userlist.length<1">{{Event.userlist.length}} friends</span>
+			  				<input type="hidden" ng-model="Event.userlist" name="data[Event][userlist]">
+		  				</a>
+					</li>
+				</ol>
+				<fieldset id="add-event-aditional" class="clr second-step-edit-event ng-video-context">
+					<ul>
+						<!-- 				   						
+						<li class="pull-left">
+						   	<select ng-options="group.id as group.name for group in groups" ng-model="Event.visiblefor" class="event-privacy-slct" name="data[Event][visiblefor]">
+						   	  <option value="" style="display:none">Visible to everyone</option>
+					  		</select>
+		   				</li> -->
+						<li class="mb-15">
+							<div class="group">
+								<div class="btn-group upload-btns">
+								  <button class="btn btn-small upload-image-btn">
+								  	<span class="upload-icon"></span> photo
+								  	<input bt-upload-image="event" bt-upload-progress="#progress-edit-event" id="fileupload" type="file" name="files[]" multiple>
+								  </button>
+								  <button class="btn btn-small" bt-toggle-video-field=".add-video-form">video</button>
+								</div>
+					  			<div id="progress-edit-event" class="img-progress progress progress-success progress-striped hide">
+								    <div class="bar" style="width: 0%;"></div>
+								</div>
+				  			</div>
+						</li>
+						<!-- <li>
+				   			<span class="inline-label">Share on</span>
+			  				<input type="checkbox" name="data[Event][shareonfb]" ng-model="Event.shareonfb" class="check-in-btn">
+			  				<span class="fb-icon" title="Facebook" tooltip-it></span>
+			  			</li> -->
+			  			<li class="clr control-group add-video-form hide" ng-class="{ error : Event.youtubeurl && add_event.youtubeurl.$error.btRegexValidate }">
+							<input type="text" name="youtubeurl" class="input-youtube"
+								ng-model="Event.youtubeurl" 
+								on-enter="newVideoUrl(Event, add_event.youtubeurl.$error.btRegexValidate)" 
+								placeholder="Ex.: http://www.youtube.com/watch?v=aBcDXyZ" 
+								bt-regex-validate="^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$">
+						</li>
+					</ul>		
+					<div class="video-preview-wrapper group" ng-hide="!Event.videos.length" bt-nav-video="Event.videos.length">
+						<div class="video-preview-nav" ng-hide="Event.videos.length<2">
+							<span class="video-preview-nav-left skip pull-left">Anterior</span>
+							<span class="video-preview-nav-right skip pull-left">Próxima</span>
+							<span class="video-preview-nav-ref pull-left">
+								<span class="current-video-numb">1</span> /
+								{{Event.videos.length}}
+							</span>
+						</div>
+						<div id="video-list-preview" class="videos-list group">
+							<div class="video-box group" ng-repeat="(key, video) in Event.videos" ng-class="{ hide : !$first, current : $first } ">
+								<div class="thumbnail pointer" bt-youtube-click="video">
+									<img bt-youtube-preview="video" class="video-medium-thumb rd">
+									<span class="medium-play-icon"></span>
+									<button type="button" class="close v_hdn" title="Remove video" ng-click="removeVideoUrl(Event,key)">×</button>
+								</div>
+								<div class="entry" bt-youtube-info="video"></div>
+							</div>	
+						</div>
+					</div>	
+					<div bt-upload-preview="Event" ng-hide="!Event.images.length"></div>						
+				</fieldset>
+			</fieldset>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button class="btn pull-left btn-cancel" ng-click="destroyEditEvent()">Cancel</button>
+		<button  class="btn pull-right btn-warning btn-confirm" ng-click="editEventSave(Event.id)">Save</button>
+	</div>
+</div>

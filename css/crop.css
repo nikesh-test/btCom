@@ -1,0 +1,13 @@
+#editprofilepic{
+	width: 700px;
+	margin-left: -350px;
+	/*margin-top:-250px;*/
+}
+.profileImageCrop{
+	background-image :url(/img/crop-bg.gif);
+	width: 668px; 
+	height:320px; 
+	border: 1px solid #dddddd; 
+	margin: 10px 0px 10px 0px; 
+	overflow: auto;
+}

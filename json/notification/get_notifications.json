@@ -1,0 +1,102 @@
+{ 
+  "categories" : [
+  	{
+  	  "name" : "general",
+  	  "unread_length" : 1,
+  	  "notifications": [
+	  	  {
+	  	  	"id" : 1,
+	  	  	"type" : "friend_request",
+	  	  	"user_id" : 9,
+	  	  	"event_title" : "Workout",	
+	  	  	"status" : "declined",  	  	
+	  	  	"when" : "2013-02-14T20:20:17Z",
+	  	  	"unread" : 1
+	  	  },
+	  	  {
+	  	  	"id" : 2,
+	  	  	"type" : "friend_request",
+	  	  	"user_id" : 9,
+	  	  	"event_title" : "Going out with friends",	  
+	  	  	"status" : "accepted",	  	
+	  	  	"when" : "2013-02-14T19:24:17Z",
+	  	  	"unread" : 0
+	  	  },
+	  	  {
+	  	  	"id" : 3,
+	  	  	"type" : "event_request",
+	  	  	"user_id" : 9,
+	  	  	"event_title" : "Study for portuguese test",
+	  	  	"status" : "accepted",	  	  	
+	  	  	"when" : "2013-01-10T20:24:17Z",
+	  	  	"unread" : 0
+	  	  }
+	  ]
+	},
+	{
+  	  "name" : "user_request",
+  	  "unread_length" : 2,
+  	  "notifications": [
+	  	  {
+	  	  	"id" : 4,
+	  	  	"user_id" : 1,
+	  	  	"when" : "2013-02-14T21:00:17Z",
+	  	  	"unread" : 1
+	  	  },
+	  	  {
+	  	  	"id" : 5,
+	  	  	"user_id" : 2,
+	  	  	"when" : "2013-02-14T20:20:17Z",
+	  	  	"unread" : 1
+	  	  },
+	  	  {
+	  	  	"id" : 6,
+	  	  	"user_id" : 3,
+	  	  	"when" : "2012-02-10T20:24:17Z",
+	  	  	"unread" : 0
+	  	  }  
+	  ]
+	},
+	{
+  	  "name" : "event_request",
+  	  "unread_length" : 4,
+  	  "notifications": [
+	  	 {
+	  	 	"id" : 7,
+	  	  	"user_id" : 1,
+	  	  	"event_title" : "Play poker with friends",	  	  	
+	  	  	"when" : "2013-02-14T18:20:17Z",
+	  	  	"unread" : 1
+	  	  },
+	  	  {
+	  	  	"id" : 8,
+	  	  	"user_id" : 3,
+	  	  	"event_title" : "Closest friends meeting",	  	  	
+	  	  	"when" : "2013-02-14T17:20:17Z",
+	  	  	"unread" : 1
+	  	  },
+	  	  {
+	  	  	"id" : 9,
+	  	  	"user_id" : 4,
+	  	  	"event_title" : "Study for final tests",
+	  	  	"when" : "2013-02-14T16:20:17Z",
+	  	  	"unread" : 1
+	  	  },
+	  	  {
+	  	  	"id" : 10,
+	  	  	"user_id" : 5,
+	  	  	"event_title" : "Clean up the room",	  	  	
+	  	  	"when" : "2013-02-14T15:20:17Z",
+	  	  	"unread" : 1
+	  	  },
+	  	  {
+	  	  	"id" : 11,
+	  	  	"user_id" : 6,
+	  	  	"event_title" : "Hack day",
+	  	  	"when" : "2013-02-12T20:24:17Z",
+	  	  	"unread" : 0
+	  	  } 
+	  ]
+	}
+  ]
+}

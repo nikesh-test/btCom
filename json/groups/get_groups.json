@@ -1,0 +1,19 @@
+{ 
+ "groups": [
+        { 
+          "name": "Closest Friends", 
+          "id": 1, 
+          "users": [1,2]
+        },
+        { 
+          "name": "Classmates", 
+          "id": 2, 
+          "users": [1]
+        },
+        { 
+          "name": "Co-workers", 
+          "id": 3, 
+          "users": [2,3]
+        }
+    ]
+}

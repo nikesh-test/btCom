@@ -1,0 +1,16 @@
+{
+  "success" : true,
+  "responseCode" : 333,
+  "message": {
+
+  },
+  "data": {
+    "day" :  10,
+    "month" : 6,
+    "year" : 2013,
+    "hour" : 8, 
+    "minutes" : 8,
+    "seconds" : 35,
+    "ampm" : "pm"
+  }
+}

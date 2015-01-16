@@ -1,0 +1,22 @@
+	<div class="modal-header invite-friends-modal-hdr">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		<h3 class="truncate">Your buds attending "{{userListEventTitle}}"</h3>
+	</div>
+	<div class="modal-body modal-body-follow">
+		<div class="follow-search invite-friends-search">
+			<input type="text" class="filter-user-input" ng-model="filterInviteList" placeholder="Filter by name...">
+		</div>
+		<div class="follow-list invite-friends-list group" bt-scroll-it="invite" bt-max-itens="5" bt-modal="#users-list">
+			<ul>
+				<li ng-repeat="u in user_list|filter:filterInviteList" ng-class="{ last: $last }" ng-init="u.name=getUserInfo(u.id, 'name')">
+					<a href="/friends/show/{{u.id}}" class="group">
+		  				<span class="img-inner event-owner">
+							<img ng-src="{{getUserInfo(u.id, 'image_src')}}" height="37" width="37" alt="{{u.name}} profile picture" class="img-circle">
+						</span>
+						<span class="user-name">{{u.name}}</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="modal-footer-follow"></div>

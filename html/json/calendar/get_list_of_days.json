@@ -1,0 +1,145 @@
+{
+    "days": [
+        {
+            "day": 30,
+            "event_length": -1
+        },
+        {
+            "day": 1,
+            "event_length": 10
+        },
+        {
+            "day": 2,
+            "event_length": 5
+        },
+        {
+            "day": 3,
+            "event_length": 0
+        },
+        {
+            "day": 4,
+            "event_length": 0
+        },
+        {
+            "day": 5,
+            "event_length": 0
+        },
+        {
+            "day": 6,
+            "event_length": 0
+        },
+        {
+            "day": 7,
+            "event_length": 0
+        },
+        {
+            "day": 8,
+            "event_length": 0
+        },
+        {
+            "day": 9,
+            "event_length": 0
+        },
+        {
+            "day": 10,
+            "event_length": 0
+        },
+        {
+            "day": 11,
+            "event_length": 0
+        },
+        {
+            "day": 12,
+            "event_length": 0
+        },
+        {
+            "day": 13,
+            "event_length": 0
+        },
+        {
+            "day": 14,
+            "event_length": 0
+        },
+        {
+            "day": 15,
+            "event_length": 0
+        },
+        {
+            "day": 16,
+            "event_length": 0
+        },
+        {
+            "day": 17,
+            "event_length": 0
+        },
+        {
+            "day": 18,
+            "event_length": 0
+        },
+        {
+            "day": 19,
+            "event_length": 0
+        },
+        {
+            "day": 20,
+            "event_length": 0
+        },
+        {
+            "day": 21,
+            "event_length": 0
+        },
+        {
+            "day": 22,
+            "event_length": 0
+        },
+        {
+            "day": 23,
+            "event_length": 0
+        },
+        {
+            "day": 24,
+            "event_length": 0
+        },
+        {
+            "day": 25,
+            "event_length": 0
+        },
+        {
+            "day": 26,
+            "event_length": 0
+        },
+        {
+            "day": 27,
+            "event_length": 0
+        },
+        {
+            "day": 28,
+            "event_length": 0
+        },
+        {
+            "day": 29,
+            "event_length": 0
+        },
+        {
+            "day": 30,
+            "event_length": 0
+        },
+        {
+            "day": 31,
+            "event_length": 0
+        },
+        {
+            "day": 1,
+            "event_length": -1
+        },
+        {
+            "day": 2,
+            "event_length": -1
+        },
+        {
+            "day": 3,
+            "event_length": -1
+        }
+
+    ]
+}
